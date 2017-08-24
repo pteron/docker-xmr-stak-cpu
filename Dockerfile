@@ -4,6 +4,7 @@ RUN apt-get update \
     && apt-get -qq --no-install-recommends install \
         libmicrohttpd10 \
         libssl1.0.0 \
+        libhwloc-dev \
     && rm -r /var/lib/apt/lists/*
 
 ENV XMR_STAK_CPU_VERSION v1.3.0-1.5.0
