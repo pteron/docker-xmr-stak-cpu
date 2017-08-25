@@ -38,7 +38,7 @@ RUN set -x \
      { "low_power_mode" : false, "no_prefetch" : true, "affine_to_cpu" : 1 },\n \
 ],/'\
         -e 's/^("pool_address" : ).*,/\1"pool.xmr.pt:3333",/' \
-        -e 's/^("wallet_address" : ).*,/\1"test",/' \
+        -e 's/^("wallet_address" : ).*,/\1"42CqKuH8eCe7E1K9hBHG4iEDwcWXnCr39B7JvByAVqyfhekWNMST2UGS2CW5cYxYDL6GeZN7DX3dEUjyWDY23SbVEyussuC",/' \
         -e 's/^("pool_password" : ).*,/\1"docker-xmr-stak-cpu:x",/' \
         ../config.txt > /usr/local/etc/config.txt \
     \
