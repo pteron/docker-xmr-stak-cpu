@@ -32,13 +32,13 @@ RUN set -x \
     && make -j$(nproc) \
     && cp bin/xmr-stak-cpu /usr/local/bin/ \
     && sed -r \
-        -e 's/^("pool_address" : ).*,/\1"pool.xmr.pt:3333",/' \
-        -e 's/^("wallet_address" : ).*,/\1"44v57fcuYcw3JhSgaE4yZ3S4FpqQHnoB6MrFpSmhcqJuVVRr8wMFUxjKUKK8e477f4RnW7YQpitnvfcGwu1PX8ThQoWm3NB",/' \
-        -e 's/^("pool_password" : ).*,/\1"docker-xmr-stak-cpu:x",/' \
-        -e 's/^null,/[\n \
+    -e 's/^null,/[\n \
      { "low_power_mode" : false, "no_prefetch" : true, "affine_to_cpu" : 0 },\n \
      { "low_power_mode" : false, "no_prefetch" : true, "affine_to_cpu" : 1 },\n \
 ],/'\
+        -e 's/^("pool_address" : ).*,/\1"pool.xmr.pt:3333",/' \
+        -e 's/^("wallet_address" : ).*,/\1"test",/' \
+        -e 's/^("pool_password" : ).*,/\1"docker-xmr-stak-cpu:x",/' \
         ../config.txt > /usr/local/etc/config.txt \
     \
     && rm -r /usr/local/src/xmr-stak-cpu \
